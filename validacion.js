@@ -18,7 +18,6 @@ const errorCondiciones = document.getElementById('errorCondiciones')
 const mensajes = document.querySelector('#mensajes')
 
 
-// Mensajes generales
 function limpiarMensajes() {
     mensajes.textContent = ''
     mensajes.className = 'mensajes'
@@ -31,7 +30,7 @@ function mostrarMensaje(texto, tipo) {
 }
 
 
-// Marcar errores
+// erroes
 function marcarError(campo, contenedor, texto) {
     campo.classList.remove('input-ok')
     campo.classList.add('input-error')
@@ -45,7 +44,7 @@ function marcarOK(campo, contenedor) {
 }
 
 
-// Validación HTML5 base
+// Validación HTML5
 function validarHTML(campo, contenedor) {
 
     if (campo.checkValidity()) {
@@ -71,20 +70,17 @@ function validarHTML(campo, contenedor) {
 }
 
 
-// Validación lógica extra (JS)
 function validarLogica() {
 
     let correcto = true
 
-    // Nombre debe tener al menos 2 palabras
     const partes = inputNombre.value.trim().split(/\s+/)
 
     if (partes.length < 2) {
         marcarError(inputNombre, errorNombre, 'Escribe nombre y apellidos')
         correcto = false
     }
-
-    // Fecha no puede ser anterior a hoy
+    
     const hoy = new Date()
     const fechaSeleccionada = new Date(inputFecha.value)
 
@@ -121,7 +117,6 @@ function validarFormulario() {
 }
 
 
-// Evento submit
 formulario.addEventListener('submit', function (e) {
 
     e.preventDefault()
@@ -135,3 +130,4 @@ formulario.addEventListener('submit', function (e) {
     }
 
 })
+
