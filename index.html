@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Molón Validado</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <h1>Formulario Molón Validado</h1>
+
+        <form id="formularioMolon" novalidate>
+
+            <div class="campo">
+                <label for="nombre">Nombre completo *</label>
+                <input id="nombre" type="text" required minlength="6">
+                <div id="errorNombre" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico *</label>
+                <input id="correo" type="email" required>
+                <div id="errorCorreo" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="edad">Edad *</label>
+                <input id="edad" type="number" required min="18" max="99">
+                <div id="errorEdad" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="fecha">Fecha favorita *</label>
+                <input id="fecha" type="date" required>
+                <div id="errorFecha" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="nivel">Nivel de satisfacción *</label>
+                <select id="nivel" required>
+                    <option value="">-- Elige uno --</option>
+                    <option value="normal">Normal</option>
+                    <option value="bastante">Satisfecho</option>
+                    <option value="super">Muy Satisfecho</option>
+                </select>
+                <div id="errorNivel" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="comentario">Comentario</label>
+                <textarea id="comentario" maxlength="150"></textarea>
+            </div>
+
+            <div class="campo">
+                <label>
+                    <input id="condiciones" type="checkbox" required>
+                    Aceptolas reglas*
+                </label>
+                <div id="errorCondiciones" class="texto-error"></div>
+            </div>
+
+            <button type="submit">Enviar formulario molón</button>
+        </form>
+
+        <div id="mensajes" class="mensajes" aria-live="polite"></div>
+
+    </main>
+
+    <script src="validacion.js"></script>
+</body>
+
+</html>
